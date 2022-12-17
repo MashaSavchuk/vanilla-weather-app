@@ -15,108 +15,148 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <form>
-          <div class="row">
-            <div class="col-9">
-              <input
-                type="search"
-                placeholder="Enter a city.."
-                class="form-control search-input"
-              />
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form id="search-form">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  class="form-control search-input shadow-sm"
+                  id="search-text-input"
+                  type="search"
+                  placeholder="Please enter a city.."
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3 p-0">
+                <input
+                  type="submit"
+                  class="btn btn-primary shadow-sm w-100"
+                  value="Search"
+                />
+              </div>
             </div>
-            <div class="col-3 p-0">
-              <input
-                type="submit"
-                class="btn btn-primary w-100"
-                value="Search"
-              />
+          </form>
+          <div class="overview">
+            <div class="row">
+              <div class="col-6">
+                <h1 id="city">New York</h1>
+                <ul>
+                  <li id="day-time">Friday 05:23</li>
+                  <li id="description">Clear</li>
+                  <li>Humidity: <span id="humidity">87</span>%</li>
+                  <li>Wind: <span id="wind">11</span> mph</li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <div class="d-flex weather-temperature">
+                  <div class="weather-degrees">
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                      alt="Clear"
+                      id="icon"
+                    />
+                    <div>
+                      <span id="temperature">12</span
+                      ><span id="units">
+                        <a href="#" id="celsius-link">°C</a> |
+                        <a href="#" id="fahrenheit-link">°F</a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </form>
 
-        <h1>New York</h1>
-        <ul>
-          <li>Friday 05:23</li>
-          <li>Clear</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt=""
-            />
-            12 °C | °F
-          </div>
-          <div class="col-6">
-            <ul>
-              <li>Precipitation: 3%</li>
-              <li>Humidity: 87%</li>
-              <li>Wind: 11 mph</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="weather-forecast row">
-          <div class="col">
-            <div class="weather-forecast-preview">
-              <div class="forecast-day">Sat</div>
-              <div class="forecast-temperature">
-                <span class="forecast-temperature-max">12°</span
-                ><span class="forecast-temperature-min">8°</span>
+          <div class="weather-forecast row">
+            <div class="col">
+              <div class="weather-forecast-preview">
+                <div class="forecast-day">Sat</div>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="Clear"
+                  id="icon"
+                />
+                <div class="forecast-temperature">
+                  <span class="forecast-temperature-max">12°</span
+                  ><span class="forecast-temperature-min">8°</span>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="weather-forecast-preview">
+                <div class="forecast-day">Sun</div>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="Clear"
+                  id="icon"
+                />
+                <div class="forecast-temperature">
+                  <span class="forecast-temperature-max">11°</span
+                  ><span class="forecast-temperature-min">7°</span>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="weather-forecast-preview">
+                <div class="forecast-day">Mon</div>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="Clear"
+                  id="icon"
+                />
+                <div class="forecast-temperature">
+                  <span class="forecast-temperature-max">11°</span
+                  ><span class="forecast-temperature-min">7°</span>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="weather-forecast-preview">
+                <div class="forecast-day">Tue</div>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="Clear"
+                  id="icon"
+                />
+                <div class="forecast-temperature">
+                  <span class="forecast-temperature-max">13°</span
+                  ><span class="forecast-temperature-min">9°</span>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="weather-forecast-preview">
+                <div class="forecast-day">Wed</div>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="Clear"
+                  id="icon"
+                />
+                <div class="forecast-temperature">
+                  <span class="forecast-temperature-max">13°</span
+                  ><span class="forecast-temperature-min">9°</span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="weather-forecast-preview">
-              <div class="forecast-day">Sun</div>
-              <div class="forecast-temperature">
-                <span class="forecast-temperature-max">11°</span
-                ><span class="forecast-temperature-min">7°</span>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="weather-forecast-preview">
-              <div class="forecast-day">Mon</div>
-              <div class="forecast-temperature">
-                <span class="forecast-temperature-max">11°</span
-                ><span class="forecast-temperature-min">7°</span>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="weather-forecast-preview">
-              <div class="forecast-day">Tue</div>
-              <div class="forecast-temperature">
-                <span class="forecast-temperature-max">13°</span
-                ><span class="forecast-temperature-min">9°</span>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="weather-forecast-preview">
-              <div class="forecast-day">Wed</div>
-              <div class="forecast-temperature">
-                <span class="forecast-temperature-max">13°</span
-                ><span class="forecast-temperature-min">9°</span>
-              </div>
-            </div>
-          </div>
+          <footer>
+            This project was coded by Mariia Savchuk and is
+            <a
+              href="https://github.com/MashaSavchuk/vanilla-weather-app"
+              target="_blank"
+              >open-sourced on GitHub</a
+            >
+            and hosted on
+            <a
+              href="https://effulgent-torte-ae568d.netlify.app/"
+              target="_blank"
+              >Netlify</a
+            >
+          </footer>
         </div>
       </div>
-      <small>
-        This project was coded by Mariia Savchuk and is
-        <a
-          href="https://github.com/MashaSavchuk/vanilla-weather-app"
-          target="_blank"
-          >open-sourced on GitHub</a
-        >
-        and hosted on
-        <a href="https://effulgent-torte-ae568d.netlify.app/" target="_blank"
-          >Netlify</a
-        >
-      </small>
     </div>
     <script src="src/app.js"></script>
   </body>
