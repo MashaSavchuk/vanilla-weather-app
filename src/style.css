@@ -67,7 +67,7 @@ li:first-letter {
 }
 
 .weather-temperature {
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .weather-degrees {
@@ -77,8 +77,8 @@ li:first-letter {
 
 .weather-temperature img {
   margin-right: 5px;
-  height: 70px;
-  width: 70px;
+  height: 90px;
+  width: 90px;
 }
 
 #temperature {
@@ -87,11 +87,6 @@ li:first-letter {
   font-weight: 700;
   line-height: 1;
   margin-left: 10px;
-}
-
-#celsius-link,
-#fahrenheit-link {
-  text-decoration: none;
 }
 
 #units {
@@ -124,6 +119,11 @@ li:first-letter {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.weather-forecast-preview img {
+  height: 70px;
+  width: 70px;
 }
 
 .forecast-temperature {
