@@ -94,11 +94,11 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+  cityElement.innerHTML = response.data.city;
 
   celsiusTemperature = response.data.temperature.current;
 
-  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
-  cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -111,7 +111,6 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.condition.description);
 
   getForecast(response.data.coordinates);
-  // console.log(response.data.coordinates);
 }
 
 function search(city) {
@@ -125,6 +124,25 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#search-city-input");
   search(cityInputElement.value);
 }
+
+function searchCurrentLocation(position) {
+  // console.log(position);
+  // console.log(position.coords.latitude);
+  // console.log(position.coords.longitude);
+  let apiKey = "tec4bo8f19e07a3f36580cf013c346bf";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  // console.log(lat, lon);
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature, displayForecast);
+}
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchCurrentLocation);
+}
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);

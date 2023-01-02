@@ -35,6 +35,10 @@ body {
   height: 50px;
   padding: 15px 0;
 }
+#search-form .current {
+  background: #6f42c1;
+}
+
 .overview {
   margin-top: 70px;
   margin-bottom: 20px;
